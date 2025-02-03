@@ -1,0 +1,29 @@
+[
+  {
+    "number": 1,
+    "icon": "fi fi-sr-volume",
+    "title": "Himno Nacional de la República de Colombia",
+    "author": "Autor Desconocido",
+    "language": "Esp",
+    "duration": "3:45",
+    "src": "./assets/music/audio1.mp3"
+  },
+  {
+    "number": 2,
+    "icon": "fi fi-sr-volume",
+    "title": "Himno Nacional de México",
+    "author": "Francisco González Bocanegra",
+    "language": "Esp",
+    "duration": "4:00",
+    "src": "./assets/music/audio2.mp3"
+  },
+  {
+    "number": 3,
+    "icon": "fi fi-sr-volume",
+    "title": "Himno Nacional de Honduras",
+    "author": "Autor Desconocido",
+    "language": "Esp",
+    "duration": "4:00",
+    "src": "./assets/music/audio2.mp3"
+  }
+]
