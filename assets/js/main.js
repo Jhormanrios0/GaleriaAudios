@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const audioAuthor = document.getElementById("audio-author");
   const currentTimeElement = document.getElementById("current-time");
   const totalTimeElement = document.getElementById("total-time");
+  const audioDescription = document
+    .getElementById("audio-description")
+    .querySelector("p");
   let currentWaveSurfer = null;
   let currentPlaying = null;
   let currentIndex = -1;
@@ -18,13 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   }
 
+  function updatePlayPauseButton() {
+    const icon = playPauseButton.querySelector("i");
+    if (currentWaveSurfer && currentWaveSurfer.isPlaying()) {
+      icon.classList.remove("fa-play");
+      icon.classList.add("fa-pause");
+    } else {
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-play");
+    }
+  }
+
   function loadAudio(index) {
     const audio = audioData[index];
     if (!audio) return;
 
-    const audioSrc = audio.src;
-    const title = audio.title;
-    const author = audio.author;
+    const { src: audioSrc, title, author, description } = audio;
 
     if (currentWaveSurfer) {
       currentWaveSurfer.destroy();
@@ -63,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     audioTitle.textContent = title;
     audioAuthor.textContent = author;
+    audioDescription.textContent = description;
     audioPlayer.classList.remove("hidden");
 
     // Remove styles from all elements
@@ -80,17 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
       '<i class="fa-solid fa-play primaryColor"></i>';
     item.querySelector("i.fa-volume-high").classList.remove("opacity-0");
     currentPlaying = item;
-  }
-
-  function updatePlayPauseButton() {
-    const icon = playPauseButton.querySelector("i");
-    if (currentWaveSurfer && currentWaveSurfer.isPlaying()) {
-      icon.classList.remove("fa-play");
-      icon.classList.add("fa-pause");
-    } else {
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-play");
-    }
   }
 
   document.addEventListener("click", function (event) {

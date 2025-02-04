@@ -5,16 +5,17 @@
     "author": "Autor Desconocido",
     "language": "Esp",
     "duration": "3:45",
-    "src": "./assets/music/audio1.mp3"
+    "src": "./assets/music/audio1.mp3",
+    "description": "El himno nacional de Colombia es una composición musical patriótica que representa a la nación."
   },
   {
     "number": 2,
-
     "title": "Himno Nacional de México",
     "author": "Francisco González Bocanegra",
     "language": "Esp",
     "duration": "4:00",
-    "src": "./assets/music/audio2.mp3"
+    "src": "./assets/music/audio2.mp3",
+    "description": "El himno nacional de México es una composición musical patriótica que representa a la nación."
   },
   {
     "number": 3,
@@ -22,6 +23,7 @@
     "author": "Autor Desconocido",
     "language": "Esp",
     "duration": "4:00",
-    "src": "./assets/music/himno.mp3"
+    "src": "./assets/music/himno.mp3",
+    "description": "El himno nacional de Honduras es una composición musical patriótica que representa a la nación."
   }
 ]
