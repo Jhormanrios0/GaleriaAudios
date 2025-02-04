@@ -49,12 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
     currentWaveSurfer.on("ready", function () {
       const totalTime = currentWaveSurfer.getDuration();
       totalTimeElement.textContent = formatTime(totalTime);
+      currentWaveSurfer.play(); // Reproduce automáticamente el audio cuando está listo
+      updatePlayPauseButton(); // Actualiza el icono del botón
     });
 
     currentWaveSurfer.on("audioprocess", function () {
       const currentTime = currentWaveSurfer.getCurrentTime();
       currentTimeElement.textContent = formatTime(currentTime);
     });
+
+    currentWaveSurfer.on("play", updatePlayPauseButton);
+    currentWaveSurfer.on("pause", updatePlayPauseButton);
 
     audioTitle.textContent = title;
     audioAuthor.textContent = author;
@@ -75,10 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
       '<i class="fa-solid fa-play primaryColor"></i>';
     item.querySelector("i.fa-volume-high").classList.remove("opacity-0");
     currentPlaying = item;
+  }
 
-    // Update play/pause button icon
-    playPauseButton.querySelector("i").classList.remove("fa-pause");
-    playPauseButton.querySelector("i").classList.add("fa-play");
+  function updatePlayPauseButton() {
+    const icon = playPauseButton.querySelector("i");
+    if (currentWaveSurfer && currentWaveSurfer.isPlaying()) {
+      icon.classList.remove("fa-play");
+      icon.classList.add("fa-pause");
+    } else {
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-play");
+    }
   }
 
   document.addEventListener("click", function (event) {
@@ -94,14 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   playPauseButton.addEventListener("click", function () {
     if (currentWaveSurfer) {
       currentWaveSurfer.playPause();
-      const icon = playPauseButton.querySelector("i");
-      if (currentWaveSurfer.isPlaying()) {
-        icon.classList.remove("fa-play");
-        icon.classList.add("fa-pause");
-      } else {
-        icon.classList.remove("fa-pause");
-        icon.classList.add("fa-play");
-      }
+      updatePlayPauseButton();
     }
   });
 

@@ -17,14 +17,14 @@
   <main class="container mx-auto">
     <h1 class="text-center text-2xl font-bold my-4">Galería de Audios</h1>
     <!-- Contenedor para la galería de audios y el reproductor -->
-    <div class="relative w-[60vw] mx-auto custom-shadow rounded-md bg-white">
+    <div class="relative w-full lg:w-[70vw]  mx-auto custom-shadow rounded-md bg-white">
       <!--& Galería de Audios -->
       <section id="audio-gallery" class="grid grid-cols-1 gap-2 max-h-[500px] p-4 overflow-y-auto rounded-md bg-white">
         <!--! AQUI SE CARGAN DINAMICAMENTE LOS ELEMENTOS -->
       </section>
       <!--& Galería de Audios -->
       <!-- Reproductor de audio -->
-      <div id="audio-player"
+      <section id="audio-player"
         class="hidden w-full px-[30px] mb-[10px] pt-[20px] bg-white rounded-lg d flex items-center audio-shadow">
         <div class="audio-info flex flex-col justify-center items-start w-1/2">
           <h2 id="audio-title" class="text-xl font-bold"></h2>
@@ -33,10 +33,10 @@
         <div class="flex flex-col items-center w-1/2">
           <div class="flex justify-between w-full relative">
             <span id="current-time" class="text-sm absolute text-thirdColor left-0 top-5">0:00</span>
-            <div id="waveform" class="w-[70%] h-[120px] ml-[40px]"></div>
+            <div id="waveform" class="w-[55%] md:w-[60%] lg:w-[80%] xl:w-full h-[120px] ml-[40px]"></div>
             <span id="total-time" class="text-sm absolute text-thirdColor right-0 top-5">0:00</span>
           </div>
-          <div class="controls mt-4 flex items-center justify-center space-x-4">
+          <div class="controls mt-[-20px] flex items-center justify-center space-x-4">
             <button id="prev" class="bg-transparent text-black px-4 py-2 rounded"><i
                 class="fa-solid fa-backward"></i></button>
             <button id="play-pause"
@@ -47,7 +47,7 @@
                 class="fa-solid fa-forward"></i></button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </main>
   <!--* Main -->
