@@ -14,11 +14,3 @@ Este proyecto es una galería de audios que permite a los usuarios seleccionar y
 ## Tecnologías Utilizadas
 
 - [WaveSurfer.js](https://wavesurfer-js.org/)
-
-## Instalación
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com/tu-usuario/galeria-de-audios.git
-   ```
